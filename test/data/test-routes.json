@@ -1,0 +1,14 @@
+{
+    "routes": [
+        {
+            "source": "SOURCE1",
+            "target": "TARGET1",
+            "host": "HOST1"
+        },
+        {
+            "source": "SOURCE2",
+            "target": "TARGET2",
+            "host": "HOST2"
+        }
+    ]
+}

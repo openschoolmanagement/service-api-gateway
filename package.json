@@ -1,0 +1,45 @@
+{
+  "name": "service-api-gateway",
+  "version": "0.0.1",
+  "description": "UI Controller Service API Gateway",
+  "main": "build/main.js",
+  "scripts": {
+    "build": "node_modules/.bin/tsc",
+    "test": "node_modules/.bin/tsc && mocha -r ts-node/register test/**/*.spec.ts",
+    "testWithCoverage": "node_modules/.bin/tsc && nyc -r lcov -e .ts -x \"test/**/*.spec.ts\" mocha -r ts-node/register test/**/*.spec.ts && nyc report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openschoolmanagement/service-api-gateway.git"
+  },
+  "keywords": [
+    "api",
+    "gateway",
+    "osm",
+    "open",
+    "school",
+    "management"
+  ],
+  "author": "Thomas Bonk <thomas@meandmymac.de>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/openschoolmanagement/service-api-gateway/issues"
+  },
+  "homepage": "https://github.com/openschoolmanagement/service-api-gateway#readme",
+  "dependencies": {
+    "@types/express": "^4.16.0",
+    "@types/http-proxy": "^1.16.2",
+    "@types/node": "^10.12.15",
+    "express": "^4.16.4",
+    "http-proxy": "^1.17.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2"
+  }
+}
