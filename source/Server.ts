@@ -1,6 +1,6 @@
 /*
-   main.ts
-   Entry point of the API gateway
+   Server.ts
+   This is the gateway server
 
    Copyright 2018 Thomas Bonk, Open School Management Team
 
@@ -17,8 +17,23 @@
    limitations under the License.
 */
 
-import { startServer } from './Server'
+import express from 'express'
 
-const port: number = Number(process.env.PORT) || 3000
+const proxy = require('express-http-proxy')
 
-startServer(port, "")
+/**
+ * Start the server on the given port with the given routes
+ * 
+ * @param port Port where the gateway is listening on
+ * @param routes Routes that are dispatched by the gateway
+ * @returns the server object
+ */
+export function startServer(port: number, routes: string): express.Application {
+    let app: express.Application = express()
+
+    app.listen(port, () => {
+        console.log(`service-api-gateway is listening on port ${port}`)
+    })
+
+    return app
+}
