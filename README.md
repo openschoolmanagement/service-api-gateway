@@ -1,6 +1,6 @@
 # service-api-gateway [![Build Status](https://travis-ci.org/openschoolmanagement/service-api-gateway.svg?branch=master)](https://travis-ci.org/openschoolmanagement/service-api-gateway)
 UI Controller Service API Gateway
-
+  
 ## Format of the route definition
 
 ```javascript
