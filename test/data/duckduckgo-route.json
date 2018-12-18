@@ -1,0 +1,9 @@
+{
+    "routes": [
+        {
+            "source": "/duck/(.+)",
+            "target": "/?q=$1&format=json",
+            "host": "api.duckduckgo.com"
+        }
+    ]
+}

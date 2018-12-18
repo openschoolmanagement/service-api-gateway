@@ -10,7 +10,7 @@
             "name": "Programm starten",
             "program": "${workspaceFolder}/build/main.js",
             "outFiles": [
-                "${workspaceFolder}/**/*.js"
+                "${workspaceFolder}/build/**/*.js"
             ]
         }
     ]

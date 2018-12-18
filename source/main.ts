@@ -17,9 +17,22 @@
    limitations under the License.
 */
 
+import * as fs from 'fs'
 import { startServer } from './Server'
 
 const port: number = Number(process.env.PORT) || 3000
-const routes: string = process.env.SERVICE_API_GATEWAY_CONFIG || '{"routes":[]}'
+const routes: string = process.env.SERVICE_API_GATEWAY_CONFIG 
+                        || loadRoutesConfigurationFromFile()
 
 startServer(port, routes)
+
+function loadRoutesConfigurationFromFile(): string {
+    if (process.argv.length > 2) {
+        let filename = process.argv[2]
+        let routes = fs.readFileSync(filename, 'utf8')
+
+        return routes
+    }
+
+    return '{"routes":[]}'
+}
