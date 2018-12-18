@@ -20,5 +20,6 @@
 import { startServer } from './Server'
 
 const port: number = Number(process.env.PORT) || 3000
+const routes: string = process.env.SERVICE_API_GATEWAY_CONFIG || '{"routes":[]}'
 
-startServer(port, '')
+startServer(port, routes)

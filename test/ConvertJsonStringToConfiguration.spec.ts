@@ -20,16 +20,22 @@ import GatewayConfiguration from '../source/configuration/GatewayConfiguration'
 
 describe('Load configuration ', function() {
 
-    it('Convert JSON string to configuration object', function() {
-      let config: GatewayConfiguration = JSON.parse('{"routes": [{"source": "SOURCE1","target": "TARGET1","host": "HOST1"},{"source": "SOURCE2","target": "TARGET2","host": "HOST2"}]}')
-      
-      expect(config.routes.length).equal(2)
-      expect(config.routes[0].source).equal('SOURCE1')
-      expect(config.routes[0].target).equal('TARGET1')
-      expect(config.routes[0].host).equal('HOST1')
-      expect(config.routes[1].source).equal('SOURCE2')
-      expect(config.routes[1].target).equal('TARGET2')
-      expect(config.routes[1].host).equal('HOST2')
-    })
+  it('Handle empty routes correctly', function() {
+    let config: GatewayConfiguration = JSON.parse('{"routes": []}')
+    
+    expect(config.routes.length).equal(0)
+  })
+
+  it('Convert JSON string to configuration object', function() {
+    let config: GatewayConfiguration = JSON.parse('{"routes": [{"source": "SOURCE1","target": "TARGET1","host": "HOST1"},{"source": "SOURCE2","target": "TARGET2","host": "HOST2"}]}')
+    
+    expect(config.routes.length).equal(2)
+    expect(config.routes[0].source).equal('SOURCE1')
+    expect(config.routes[0].target).equal('TARGET1')
+    expect(config.routes[0].host).equal('HOST1')
+    expect(config.routes[1].source).equal('SOURCE2')
+    expect(config.routes[1].target).equal('TARGET2')
+    expect(config.routes[1].host).equal('HOST2')
+  })
 
   })

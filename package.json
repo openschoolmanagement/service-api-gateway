@@ -4,6 +4,7 @@
   "description": "UI Controller Service API Gateway",
   "main": "build/main.js",
   "scripts": {
+    "start": "node build/main.js",
     "build": "node_modules/.bin/tsc",
     "test": "node_modules/.bin/tsc && mocha -r ts-node/register test/**/*.spec.ts",
     "testWithCoverage": "node_modules/.bin/tsc && nyc -r lcov -e .ts -x \"test/**/*.spec.ts\" mocha -r ts-node/register test/**/*.spec.ts && nyc report"
