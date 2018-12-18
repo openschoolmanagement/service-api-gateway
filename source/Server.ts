@@ -18,8 +18,8 @@
 */
 
 import express from 'express'
-
-const proxy = require('express-http-proxy')
+import GatewayConfiguration from './configuration/GatewayConfiguration'
+import Gateway from './Gateway'
 
 /**
  * Start the server on the given port with the given routes
@@ -30,6 +30,10 @@ const proxy = require('express-http-proxy')
  */
 export function startServer(port: number, routes: string): express.Application {
     let app: express.Application = express()
+    let configuration: GatewayConfiguration = JSON.parse(routes)
+    let gateway = new Gateway(configuration)
+
+    gateway.initializeRoutes(app)
 
     app.listen(port, () => {
         console.log(`service-api-gateway is listening on port ${port}`)

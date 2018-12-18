@@ -21,4 +21,4 @@ import { startServer } from './Server'
 
 const port: number = Number(process.env.PORT) || 3000
 
-startServer(port, "")
+startServer(port, '')
