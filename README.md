@@ -14,3 +14,8 @@ UI Controller Service API Gateway
     ]
 }
 ```
+
+## Passing route definition
+
+The route definition can be passed in the enironment variable `SERVICE_API_GATEWAY_CONFIG` or
+as a file where the filename must be passed as a CLI parameter.
