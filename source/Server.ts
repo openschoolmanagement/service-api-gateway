@@ -17,6 +17,7 @@
    limitations under the License.
 */
 
+import * as http from 'http'
 import express from 'express'
 import GatewayConfiguration from './configuration/GatewayConfiguration'
 import Gateway from './Gateway'
@@ -28,16 +29,14 @@ import Gateway from './Gateway'
  * @param routes Routes that are dispatched by the gateway
  * @returns the server object
  */
-export function startServer(port: number, routes: string): express.Application {
+export function startServer(port: number, routes: string): http.Server {
     let app: express.Application = express()
     let configuration: GatewayConfiguration = JSON.parse(routes)
     let gateway = new Gateway(configuration)
 
     gateway.initializeRoutes(app)
 
-    app.listen(port, () => {
+    return app.listen(port, () => {
         console.log(`service-api-gateway is listening on port ${port}`)
     })
-
-    return app
 }

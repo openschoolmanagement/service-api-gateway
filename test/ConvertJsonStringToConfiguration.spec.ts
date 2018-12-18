@@ -15,7 +15,6 @@
 */
 
 import { expect } from 'chai';
-
 import GatewayConfiguration from '../source/configuration/GatewayConfiguration'
 
 describe('Load configuration ', function() {
